@@ -1,0 +1,1109 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-11-10T17:22:28+08:00</updated><id>http://localhost:4000/</id><title type="html">小飞机的取经之路</title><subtitle>欢迎大家来我的博客参观，我是一名前端小白，正在修炼前端真经。路漫漫，其修远兮，吾将上下而求索。 目前我会HTML+CSS+JavaScript,还有简单的PHP。使用过Vue.js和typescript。总的来说，现在还处于前端 学习的飞速发展阶段。还有无限的提升空间，谢谢大家的支持。</subtitle><entry><title type="html">typeScript学习笔记</title><link href="http://localhost:4000/share/2017/11/04/d5.html" rel="alternate" type="text/html" title="typeScript学习笔记" /><published>2017-11-04T21:41:45+08:00</published><updated>2017-11-04T21:41:45+08:00</updated><id>http://localhost:4000/share/2017/11/04/d5</id><content type="html" xml:base="http://localhost:4000/share/2017/11/04/d5.html">&lt;h3 id=&quot;1基础类型&quot;&gt;1.基础类型&lt;/h3&gt;
+&lt;h4 id=&quot;11-布尔值&quot;&gt;1.1 布尔值&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let isDone: boolean = false;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;12-数字&quot;&gt;1.2 数字&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let decLiteral: number = 6;
+let hexLiteral: number = 0xf00d;
+let binaryLiteral: number = 0b1010;
+let octalLiteral: number = 0o744;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;13-字符串&quot;&gt;1.3 字符串&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let myName: string = `Gene`;
+let age: number = 37;
+let sentence: string = `Hello, my name is ${myName}.
+I'll be ${ age + 1 } years old next month.`;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;14-数组&quot;&gt;1.4 数组&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let list:number[]=[1,2,3];
+let list2:Array&amp;lt;String&amp;gt; = ['1','2','3'];
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;15-元祖tuple&quot;&gt;1.5 元祖Tuple&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let x: [string,number];
+x=['hello',10];
+x[3] = &quot;world&quot;;
+x[4] = 100;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;16-枚举&quot;&gt;1.6 枚举&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;enum Color {Red=1, Green, Blue}
+let c: Color = Color.Green;
+console.log(c);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;17-any&quot;&gt;1.7 Any&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let notSure: any = 4;
+notSure = &quot;maybe a string instead&quot;;
+notSure = false; // okay, definitely a boolean
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;18-void&quot;&gt;1.8 Void&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let unusable: void = undefined;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;19-null和undefined&quot;&gt;1.9 Null和undefined&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let u: undefined = undefined;
+let n: null = null;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;110-never&quot;&gt;1.10 Never&lt;/h4&gt;
+
+&lt;h4 id=&quot;111-类型断言&quot;&gt;1.11 类型断言&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//“尖括号”语法
+let someValue: any = &quot;this is a string&quot;;
+let strLength: number = (&amp;lt;string&amp;gt;someValue).length;
+//as语法
+let someValue: any = &quot;this is a string&quot;;
+let strLength：number = (someValue as string).length;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;2变量声明&quot;&gt;2.变量声明&lt;/h3&gt;
+&lt;h4 id=&quot;21-let声明&quot;&gt;2.1 let声明&lt;/h4&gt;
+&lt;p&gt;当用let声明一个变量，它使用的是词法作用域或块作用域。&lt;/p&gt;
+&lt;h4 id=&quot;22-const声明&quot;&gt;2.2 const声明&lt;/h4&gt;
+&lt;p&gt;声明一个常量&lt;/p&gt;
+&lt;h4 id=&quot;23-结构赋值&quot;&gt;2.3 结构赋值&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;结构数组&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let input = [1, 2];
+let [first, second] = input;
+console.log(first); // outputs 1
+console.log(second); // outputs 2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;结构对象&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let o = {
+    a: &quot;foo&quot;,
+    b: 12,
+    c: &quot;bar&quot;
+};
+let { a, b } = o;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;3接口interface&quot;&gt;3.接口interface&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;interface Person {
+    firstName: string;
+    lastName: string;
+}
+
+function greeter(person: Person) {
+    return &quot;Hello, &quot; + person.firstName + &quot; &quot; + person.lastName;
+}
+
+var user = { firstName: &quot;Jane&quot;, lastName: &quot;User&quot; };
+
+console.log(greeter(user));
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;4类class&quot;&gt;4.类class&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Student {
+    fullName: string;
+    constructor(public firstName, public middleInitial, public lastName) {
+        this.fullName = firstName + &quot; &quot; + middleInitial + &quot; &quot; + lastName;
+    }
+}
+
+interface Person {
+    firstName: string;
+    lastName: string;
+}
+
+function greeter(person : Person) {
+    return &quot;Hello, &quot; + person.firstName + &quot; &quot; + person.lastName;
+}
+
+var user = new Student(&quot;Jane&quot;, &quot;M.&quot;, &quot;User&quot;);
+
+console.log(greeter(user));
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+class和interface最大的不同在于class还提供了其他内容的实现方法，而不仅仅是形状内容。
+
+
+如果新建一个从服务器或类似的模型数据，最好使用interface。
+
+不像classes，interface会在编译之后完全删除。
+
+如果我们会在之后会多次调整使用同一个interface，那么我们最好将其转化成class来使用。
+&lt;/blockquote&gt;</content><author><name></name></author><summary type="html">1.基础类型 1.1 布尔值</summary></entry><entry><title type="html">使用脚手架搭建vue项目</title><link href="http://localhost:4000/share/2017/11/04/vuecij.html" rel="alternate" type="text/html" title="使用脚手架搭建vue项目" /><published>2017-11-04T21:41:45+08:00</published><updated>2017-11-04T21:41:45+08:00</updated><id>http://localhost:4000/share/2017/11/04/vuecij</id><content type="html" xml:base="http://localhost:4000/share/2017/11/04/vuecij.html">&lt;h5 id=&quot;1简介&quot;&gt;1、简介&lt;/h5&gt;
+&lt;p&gt;Vue.js是一套构建用户界面(user interface)的渐进式框架。&lt;/p&gt;
+&lt;h5 id=&quot;2vue安装&quot;&gt;2、Vue安装&lt;/h5&gt;
+&lt;ol&gt;
+  &lt;li&gt;使用淘宝镜像安装,之后可以用cnpn代替npm,加快安装速度。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install -g cnpm --registry=https://registry.npm.taobao.org
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;创建vue项目&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# 安装 vue-cli(vue脚手架)
+$ npm install --global vue-cli
+# 使用 &quot;webpack&quot; 模板创建一个新项目
+$ vue init webpack my-project
+#进入项目目录
+$ cd my-project
+# 安装依赖
+$ npm install
+#运行Vue
+$ npm run dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ol&gt;
+  &lt;li&gt;从*.vue=&amp;gt;页面&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;graph TD
+    A[*.Vue] --&amp;gt;B[webpack]
+    B --&amp;gt; *.html
+    B --&amp;gt; *.js
+    B --&amp;gt; *.css
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">1、简介 Vue.js是一套构建用户界面(user interface)的渐进式框架。 2、Vue安装 使用淘宝镜像安装,之后可以用cnpn代替npm,加快安装速度。</summary></entry><entry><title type="html">jQuery插件实现图片预加载</title><link href="http://localhost:4000/share/2017/10/28/d3.html" rel="alternate" type="text/html" title="jQuery插件实现图片预加载" /><published>2017-10-28T21:41:45+08:00</published><updated>2017-10-28T21:41:45+08:00</updated><id>http://localhost:4000/share/2017/10/28/d3</id><content type="html" xml:base="http://localhost:4000/share/2017/10/28/d3.html">&lt;h4 id=&quot;实现图片的预加载的主要步骤&quot;&gt;实现图片的预加载的主要步骤&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;创建image对象
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var imgObj = new Image();
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;监听load事件&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$(imgObj).load(function(){
+    //加载图片时所需的操作
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;赋值src开始预加载&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;imgObj.src = src;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h4 id=&quot;jquery插件的写法以图片预加载为例子&quot;&gt;jquery插件的写法（以图片预加载为例子）&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;基本格式
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;(function($){//使用闭包模拟局部作用域
+ //构造函数
+ function PreLoad(img,options){
+     //初始化
+     this.imgs = (typeof imgs==='string')?[img]:imgs;
+     this.opts = $.extend({},PreLoad.DEFAULTS,options);
+     if(this.opts.order === 'ordered') {
+         this._ordered();//有序加载
+     }else{
+         this._unordered();//无序加载
+     }
+ }
+ //默认参数
+ PreLoad.DEFAULTS = {
+     order: 'unordered',//无序预加载
+     each:null,//每张图片加载完毕或执行
+     all:null//所有图片加载完毕后执行
+ };
+ //将函数定义在原型上，使每初始化一个对象时可以共享同一个方法
+ PreLoad.prototype._unordered = function() {
+     //无序加载
+ }，
+ PreLoad.prototype._unordered = function() {
+     //有序加载
+ }
+ //使用以下方式初始化功能
+ //$.fn.extend -&amp;gt; $('#img').preload()
+ //$.extend -&amp;gt; $.preload();
+ $.extend({
+     preload:function(imgs,opts){
+         new PreLoad(imgs,opts);
+     }
+ });
+})(jQuery);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;2.使用&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;statics/js/jquery-1.4.2.min.js&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;statics/js/preload.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+	    &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+	        &lt;span class=&quot;c1&quot;&gt;//调用无序&lt;/span&gt;
+    		&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;preload&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;imgs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,{&lt;/span&gt;
+    			&lt;span class=&quot;na&quot;&gt;each&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    				&lt;span class=&quot;c1&quot;&gt;//每张图片加载完执行的方法&lt;/span&gt;
+    			&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+    			&lt;span class=&quot;na&quot;&gt;all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+    				&lt;span class=&quot;c1&quot;&gt;//所有图片加载完执行的方法&lt;/span&gt;
+    			&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    		&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+    		&lt;span class=&quot;c1&quot;&gt;//调用有序&lt;/span&gt;
+    		&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;preload&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;imgs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,{&lt;/span&gt;
+    			&lt;span class=&quot;na&quot;&gt;order&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'ordered'&lt;/span&gt;
+    		&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+	    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">实现图片的预加载的主要步骤 创建image对象 var imgObj = new Image(); 监听load事件</summary></entry><entry><title type="html">HTML+CSS学习笔记</title><link href="http://localhost:4000/share/2017/10/27/d2.html" rel="alternate" type="text/html" title="HTML+CSS学习笔记" /><published>2017-10-27T21:41:45+08:00</published><updated>2017-10-27T21:41:45+08:00</updated><id>http://localhost:4000/share/2017/10/27/d2</id><content type="html" xml:base="http://localhost:4000/share/2017/10/27/d2.html">&lt;h4 id=&quot;一html标签&quot;&gt;一、html标签&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;标签的用途
+使其语义化，明白每个标签的用途。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;语义化的好处：
+    &lt;ul&gt;
+      &lt;li&gt;更容易被搜索引擎收录。&lt;/li&gt;
+      &lt;li&gt;容易让屏幕阅读器读出网页内容。&lt;/li&gt;
+      &lt;li&gt;让开发者读懂网页结构和内容。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;标签举例&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. &amp;lt;q&amp;gt;标签，短文本引用
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;最初知道庄子，是从一首诗&lt;q&gt;庄生晓梦迷蝴蝶。望帝春心托杜鹃。&lt;/q&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;2. &amp;lt;blockquote&amp;gt;标签，长文本引用
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;blockquote&gt;&quot;blockquote”的作用也是引用别人的文本。但它是对长文本的引用，如在文章中引入大段某知名作家的文字，这时需要这个标签。&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;3. &amp;lt;address&amp;gt;标签，为网页加入地址信息
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;address&gt;北京市西城区德外大街10号&lt;/address&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;4. 使用&amp;lt;code&amp;gt;标签,加入代码
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;水平渐变的实现，类似这样&lt;br /&gt;
+{background-image:linear-gradient(left, red 100px, yellow 200px)}&lt;/p&gt;
+&lt;p&gt;&amp;lt;/code&amp;gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;5. 使用&amp;lt;pre&amp;gt;标签为网页加入大段代码
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;pre&gt;
+    var message = &quot;hello world!&quot;;
+     for(var i=1;i&amp;lt;=10;i++)
+    {
+        alert(message);
+    }
+&lt;/pre&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;6. &amp;lt;caption&amp;gt;标签，为表格添加标题;
+属性summary添加摘要。
+摘要的内容是不会在浏览器中显示出来的。它的作用是增加表格的可读性(语义化)，使搜索引擎更好的读懂表格内容，还可以使屏幕阅读器更好的帮助特殊用户读取表格内容。
+&amp;lt;table summmary=&quot;2012年到2013年库存记录&quot;&amp;gt;
+  &amp;lt;caption&amp;gt;本表格记录2012年到2013年库存记录，记录包括U盘和耳机库存量&amp;lt;/caption&amp;gt;
+&amp;lt;/table&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;table summmary=&quot;2012年到2013年库存记录&quot;&gt;
+   &lt;caption&gt;本表格记录2012年到2013年库存记录，记录包括U盘和耳机库存量&lt;/caption&gt;
+  &lt;tr&gt;
+    &lt;th&gt;产品名称 &lt;/th&gt;
+    &lt;th&gt;品牌 &lt;/th&gt;
+    &lt;th&gt;库存量（个） &lt;/th&gt;
+    &lt;th&gt;入库时间 &lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;耳机 &lt;/td&gt;
+    &lt;td&gt;联想 &lt;/td&gt;
+    &lt;td&gt;500&lt;/td&gt;
+    &lt;td&gt;2013-1-2&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;U盘 &lt;/td&gt;
+    &lt;td&gt;金士顿 &lt;/td&gt;
+    &lt;td&gt;120&lt;/td&gt;
+    &lt;td&gt;2013-8-10&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;U盘 &lt;/td&gt;
+    &lt;td&gt;爱国者 &lt;/td&gt;
+    &lt;td&gt;133&lt;/td&gt;
+    &lt;td&gt;2013-3-25&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;7. 使用mailto在网页中链接Email地址
+&amp;lt;a href=&quot;mailto:yy@imooc.com?cc=抄送@qq.com&amp;amp;bcc=密送@qq.com&amp;amp;subject=摘要&amp;amp;body=内容&quot;&amp;gt;
+对此影评有何感想，发送邮件给我&amp;lt;/a&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href=&quot;mailto:yy@imooc.com?subject=观了不起的盖茨比有感&amp;amp;body=你好，对此评论有些想法&quot;&gt;对此影评有何感想，发送邮件给我&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;8. form表单中的label标签
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;label标签不会向用户呈现任何特殊效果，它的作用是为鼠标用户改进了可用性。如果你在 label 标签内点击文本，就会触发此控件。就是说，当用户单击选中该label标签时，浏览器就会自动将焦点转到和标签相关的表单控件上（就自动选中和该label标签相关连的表单控件上）。&lt;/p&gt;
+
+&lt;h4 id=&quot;二css样式层叠样式表cascading-style-sheets&quot;&gt;二、CSS样式（层叠样式表Cascading Style Sheets）&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;主要是用于定义HTML内容在浏览器内的显示样式。&lt;/li&gt;
+  &lt;li&gt;由&lt;strong&gt;选择符&lt;/strong&gt;和&lt;strong&gt;声明&lt;/strong&gt;组成，而声明又由&lt;strong&gt;属性&lt;/strong&gt;和&lt;strong&gt;值&lt;/strong&gt;组成。&lt;/li&gt;
+  &lt;li&gt;css样式优先级从高到低为：&lt;strong&gt;内联式样式&lt;/strong&gt;&amp;gt;&lt;strong&gt;嵌入式样式&lt;/strong&gt;&amp;gt;&lt;strong&gt;外部式样式&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;嵌入式&amp;gt;外部式有一个前提：嵌入式css样式的位置一定在外部式的后面。&lt;/li&gt;
+      &lt;li&gt;当有相同权重的样式存在时，会根据这些css样式的前后顺序来决定，处于最后面的css样式会被应用。总的来说，就是–就近原则（离被设置元素越近优先级别越高）。&lt;/li&gt;
+      &lt;li&gt;注意以上优先级的前提：内联式、嵌入式、外部式样式表中css样式是在的相同权值的情况。&lt;/li&gt;
+      &lt;li&gt;根据权值计算优先级，权值大的优先级大：&lt;strong&gt;标签的权值为1，类选择符的权值为10，ID选择符的权值最高为100， 内联样式（style=”“）表的权值最高 1000；&lt;/strong&gt;。&lt;/li&gt;
+      &lt;li&gt;使用&lt;strong&gt;!importan&lt;/strong&gt;t设置样式为最高权重值
+```
+p{color:red!important;}/&lt;em&gt;p标签颜色为红色&lt;/em&gt;/
+p.first{color:green;}&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+&lt;p class=&quot;first&quot;&gt;三年级时，我还是一个&lt;span&gt;胆小如鼠&lt;/span&gt;的小女孩。&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;4. 元素分类
+- 块级元素（block）
+1. 每个块元素都从新的一行开始，并且自动换行；
+2. 块级元素的宽度、高度、行高以及上下边距都可以设置；
+3. 在不设置宽度时，占其父元素宽度的100%；
+4. 常见的块级元素：
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div&gt; &lt;p&gt; &lt;h1&gt;……&lt;h5&gt; &lt;ul&gt; &lt;ol&gt; &lt;li&gt; &lt;dl&gt; &lt;table&gt; &lt;address&gt; &lt;blockquote&gt; &lt;form&gt; 
+```
+- 行内元素（inline）
+1. 和其他元素都在一行上；
+2. 元素的宽度、高度以及顶部和底部的边距都不可以设置；
+3. 元素的宽度就是包含它文字或图片的宽度，不可改变。
+4. 常见的行内元素：
+```
+&lt;a&gt; &lt;span&gt; &lt;br /&gt; &lt;i&gt; &lt;em&gt; &lt;strong&gt; &lt;label&gt; &lt;q&gt; &lt;var&gt; &lt;cite&gt; &lt;code&gt;
+```
+- 内联块状元素（inline-block）
+1. 和其他元素都在一行上；
+1. 元素的高度、宽度、行高以及顶和底边距都可设置。
+1. 常用的内联块状元素有：
+```
+&lt;img /&gt; &lt;input /&gt; &lt;td&gt;
+```
+5. css盒模型
+- content+padding+border+margin
+6. **css布局模型**
+- 6.1 流动模型（Flow）
+   1. 流动（Flow）是默认的网页布局模式。也就是说网页在默认状态下的 HTML 网页元素都是根据流动模型来分布网页内容的。
+   2. 流动布局模型具有2个比较典型的特征：&lt;br /&gt;
+       1）块状元素会在所处的包含元素内自上而下顺序垂直延伸分布（默认状态下，块级元素宽度100%）；&lt;br /&gt;
+       2）在流动模型下，内联元素都会在所处的包含元素内从左到右水平分布显示。（内联元素可不像块状元素这么霸道独占一行）
+- 6.2 浮动模型 (Float)
+    1. 通过设置float值使块级元素浮动，实现一行显示多个块级元素
+- 6.3 层模型（Layer）
+    1. 层布局模型就像是图像软件PhotoShop的图层编辑功能一样，**让html元素在网页中精确定位。**
+    2. CSS定义了一组定位（positioning）属性来支持层布局模型。
+       1. 绝对定位(position: absolute)
+          1. 元素框从文档流完全删除，并相对于其==最接近的一个具有定位属性的父包含块==进行绝对定位。如果不存在这样的包含块，则相对于body元素，即相对于浏览器窗口。
+       1. 相对定位(position: relative)
+          1. 为元素设置层模型中的相对定位,通过left、right、top、bottom属性确定==元素在正常文档流中的偏移位置==。相对定位完成的过程是首先按static(float)方式生成一个元素(并且元素像层一样浮动了起来)，然后相对于以前的位置移动，移动的方向和幅度由left、right、top、bottom属性确定，偏移前的位置保留不动。
+       1. 固定定位(position: fixed)
+          1. 表示固定定位，与absolute定位类型类似，但它的相对移动的坐标是视图（屏幕内的网页窗口）本身。由于视图本身是固定的，它不会随浏览器窗口的滚动条滚动而变化，除非你在屏幕中移动浏览器窗口的屏幕位置，或改变浏览器窗口的显示大小，因此固定定位的元素会始终位于浏览器窗口内视图的某个位置，不会受文档流动影响，
+7. css代码缩写
+- 盒模型代码简写
+    1. top、right、bottom、left的值相同 &lt;code&gt;margin:10px;&lt;/code&gt;
+    1. top和bottom值相同、left和 right的值相同 &lt;code&gt;margin:10px 20px;&lt;/code&gt;  
+    2. left和right的值相同&lt;code&gt;margin:10px 20px 30px;&lt;/code&gt;  
+    3. top、right、bottom、left的值 &lt;code&gt;margin:10px 40px 30px 20px;&lt;/code&gt;
+- 颜色缩写
+   1. 关于颜色的css样式也是可以缩写的，当你设置的颜色是16进制的色彩值时，如果每两位的值相同，可以缩写一半。&lt;code&gt;p{color:#336699;}&lt;/code&gt;=&amp;gt;&lt;code&gt;p{color:#369;}&lt;/code&gt;
+- 字体缩写
+
+```
+body{
+    font-style:italic;
+    font-variant:small-caps; 
+    font-weight:bold; 
+    font-size:12px; 
+    line-height:1.5em; 
+    font-family:&quot;宋体&quot;,sans-serif;
+}
+/*缩写成*/
+body{
+    font:italic  small-caps  bold  12px/1.5em  &quot;宋体&quot;,sans-serif;
+}
+/*
+注意：
+1、使用这一简写方式你至少要指定 font-size 和 font-family 属性，其他的属性(如 font-weight、font-style、font-variant、line-height)如未指定将自动使用默认值。
+2、在缩写时 font-size 与 line-height 中间要加入“/”斜扛。
+*/
+```
+
+8. 单位和值
+- 像素&lt;br /&gt;
+像素是相对单位，指的是显示器上的小点（CSS规范中假设“90像素=1英寸”）。实际情况是浏览器会使用显示器的实际像素值有关，在目前大多数的设计者都倾向于使用像素（px）作为单位。
+- em&lt;br /&gt;
+就是本元素给定字体的 font-size 值，如果元素的 font-size 为 14px ，那么 1em = 14px；如果 font-size 为 18px，那么 1em = 18px。
+**注意：但当给 font-size 设置单位为 em 时，此时计算的标准以 p 的父元素的 font-size 为基础。**
+- 百分比
+```
+p{font-size:12px;line-height:130%}
+```
+设置行高（行间距）为字体的130%（12 * 1.3 = 15.6px）。
+
+9. 不定宽块状元素水平居中方法
+    1. 加入 table 标签&lt;br /&gt;利用table标签的长度自适应性---即不定义其长度也不默认父元素body的长度（table其长度根据其内文本长度决定），因此可以看做一个定宽度块元素，然后再利用定宽度块状居中的margin的方法，使其水平居中。
+    2. 设置 display: inline&lt;br /&gt;
+    与第一种类似，显示类型设为 行内元素，进行不定宽元素的属性设置
+    3. 设置 position:relative 和 left:50%&lt;br /&gt;
+    通过给父元素设置 float，然后给父元素设置 position:relative 和 left:50%，此时，相当于把父元素的左边缘对齐到整行的中间；子元素设置 position:relative 和 left: -50% 来实现水平居中。
+10. 垂直居中
+    1. 父元素高度确定的单行文本&lt;br /&gt;
+    **通过设置父元素的 height 和 line-height 高度一致来实现;&lt;br /&gt;**
+    行高：指在文本中，行与行之间的基线间的距离；&lt;br /&gt;
+    line-height 与 font-size 的计算值之差，在 CSS 中成为“行间距”。分为两半，分别加到一个文本行内容的顶部和底部。&lt;br /&gt;
+    弊端：当文字长度大于块的宽度时，就有内容脱离了块。
+    2. 父元素高度确定的多行文本
+         1. 使用插入 table  (包括tbody、tr、td)标签，同时设置 vertical-align：middle（vertical-align属性用于垂直居中，在父元素设置居中时，只对inline-block类型的子元素起作用。）
+         2. 父元素中设置：{display:table-cell;
+	vertical-align:middle;};但是兼容性不好，不支持ie6、7。
+11. 隐性改变display类型&lt;br /&gt;
+有一个有趣的现象就是当为元素（不论之前是什么类型元素，display:none 除外）设置以下 2 个句之一：
+
+    1. position : absolute 
+    2. float : left 或 float:right 
+
+简单来说，只要html代码中出现以上两句之一，**元素的display显示类型就会自动变为以 display:inline-block（块状元素）的方式显示**，当然就可以设置元素的 width 和 height 了，且默认宽度不占满父元素。
+
+#### 三、reflow和repaint(回流和重绘)
+1. **浏览器的解析过程** 
+    1. 解析html或js以构建DOM树
+    2. 解析css,构建渲染树（render tree）
+    3. 布局渲染树（reflow）
+    4. 绘制渲染树（repaint）
+2. **render tree**
+
+&amp;emsp;&amp;emsp;渲染树中每个节点都有自己的样式，并且不包含隐含的节点（display：none）和head节点。但是会包含占有空间的节点，如visibility：hidden
+3. **reflow**
+
+&amp;emsp;&amp;emsp;对于DOM结构中的各个元素都有自己的盒子（模型），这些都需要浏览器根据各种样式（浏览器的、开发人员定义的等）来计算并根据计算结果将元素放到它该出现的位置，这个过程称之为reflow； 
+4. **repaint**
+
+&amp;emsp;&amp;emsp;当render tree中的一些元素需要更新属性，而这些属性只是影响元素的外观，风格，而不会影响布局的，比如background-color。则就叫称为repaint重绘。 
+### 注意：回流必将引起重绘，而重绘不一定会引起回流。
+  
+&lt;/td&gt;&lt;/code&gt;&lt;/cite&gt;&lt;/var&gt;&lt;/q&gt;&lt;/label&gt;&lt;/strong&gt;&lt;/em&gt;&lt;/i&gt;&lt;/span&gt;&lt;/a&gt;&lt;/form&gt;&lt;/blockquote&gt;&lt;/address&gt;&lt;/table&gt;&lt;/dl&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/ul&gt;&lt;/h5&gt;&lt;/h1&gt;&lt;/p&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">一、html标签 标签的用途 使其语义化，明白每个标签的用途。</summary></entry><entry><title type="html">使用gulp搭开发环境</title><link href="http://localhost:4000/share/2017/10/26/repait.html" rel="alternate" type="text/html" title="使用gulp搭开发环境" /><published>2017-10-26T21:41:45+08:00</published><updated>2017-10-26T21:41:45+08:00</updated><id>http://localhost:4000/share/2017/10/26/repait</id><content type="html" xml:base="http://localhost:4000/share/2017/10/26/repait.html">&lt;h1 id=&quot;一gulp使用&quot;&gt;一、gulp使用&lt;/h1&gt;
+&lt;h2 id=&quot;1执行预处理&quot;&gt;1、执行预处理&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// include the required packages. 
+var gulp = require('gulp');
+var data = require('gulp-data');
+var stylus = require('gulp-stylus');
+
+//预编译stylus
+gulp.task('stylus', function() {
+  return gulp.src('./src/statics/stylus/*.styl')//输出符合所提供的匹配模式的文件。将返回一个 Vinyl files 的 stream 它可以被 piped 到别的插件中
+    .pipe(stylus())
+    .pipe(gulp.dest('./src/statics/css'))
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;2监听文件&quot;&gt;2、监听文件&lt;/h2&gt;
+&lt;p&gt;使用watch可以监听文件的变化，自动执行任务。这样一来，就不需要每次到命令行中执行task。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//监听styl文件
+gulp.task('watch',function() {
+	gulp.watch('./src/statics/stylus/*.styl',['stylus']);
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;3使用browser-sync自动刷新&quot;&gt;3、使用Browser Sync自动刷新&lt;/h2&gt;
+&lt;p&gt;在css编译完成后立即刷新浏览器，此时将stylus任务中的代码改一下，完整代码如下：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// include the required packages. 
+var browserSync = require('browser-sync');
+// include the required packages. 
+var gulp = require('gulp');
+var data = require('gulp-data');
+var stylus = require('gulp-stylus');
+var browserSync = require('browser-sync');
+ 
+//执行预处理
+gulp.task('stylus', function() {
+  return gulp.src('./src/statics/stylus/*.styl')//输出符合所提供的匹配模式的文件。将返回一个 Vinyl files 的 stream 它可以被 piped 到别的插件中
+    .pipe(stylus())
+    .pipe(gulp.dest('./src/statics/css'))
+     .pipe(browserSync.reload({//刷新浏览器
+     	stream:true
+     }))
+});
+//监听styl文件
+gulp.task('watch',function() {
+	gulp.watch('./src/statics/stylus/*.styl',['stylus']);
+});
+//使用Browser Sync自动刷新
+
+// 静态服务器 + 监听 stly/html 文件
+gulp.task('serve', ['stylus'], function() {
+    browserSync.init({
+        server: &quot;./dist&quot;
+    });
+    gulp.watch(&quot;./src/statics/stylus/*.styl&quot;, ['stylus']);
+    gulp.watch(&quot;dist/*.html&quot;).on('change', reload);
+});
+gulp.task('default',['serve']);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;4打包和压缩&quot;&gt;4、打包和压缩&lt;/h2&gt;
+&lt;p&gt;此操作可以将多个js文件合并到一个main.min.js中，压缩体积并减少HTTP请求数，起到一定的优化web性能的作用。&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//以下require需要的module  
+var gulp = require('gulp'),  
+    data = require('gulp-data'),
+    stylus = require('gulp-stylus'),
+    concat = require('gulp-concat'),  //文件合并
+    rename = require('gulp-rename'), 
+    minifycss = require('gulp-minify-css'),  
+    uglify = require('gulp-uglify'),  
+    imagemin = require('gulp-imagemin'),//压缩图片
+    htmlmin = require('gulp-htmlmin'),
+    del = require('del');  
+//编译stylus并将其压缩
+gulp.task('stylus',function(){
+     return gulp.src('./src/statics/stylus/*.styl')//输出符合所提供的匹配模式的文件。将返回一个 Vinyl files 的 stream 它可以被 piped 到别的插件中
+    .pipe(stylus())
+    .pipe(minify())//压缩css
+    .pipe(gulp.dest('./dist/statics/css'))
+    .pipe(reload({stream: true}));
+});
+//压缩JS  
+gulp.task('minify', function() {  
+    gulp.src('./src/js/*.js')  
+        .pipe(concat('main.js'))         //合并所有js到main.js  
+        .pipe(rename({suffix: '.min'}))  //rename压缩后的文件名 让main.js变成main.min.js  
+        .pipe(uglify())                  //执行压缩  
+        .pipe(gulp.dest('./dist/js'))  
+});  
+
+//压缩图片
+gulp.task('minifyImg', function(){
+    return gulp.src(['src/statics/img/*/*.*','src/statics/img/*.*'])
+        .pipe(imagemin())
+        .pipe(gulp.dest('dist/statics/img'));
+});
+//压缩html
+var htmlmin = require('gulp-htmlmin');
+gulp.task('Htmlmin', function () {
+    var options = {
+        removeComments: true,//清除HTML注释
+        collapseWhitespace: true,//压缩HTML
+        collapseBooleanAttributes: true,//省略布尔属性的值 &amp;lt;input checked=&quot;true&quot;/&amp;gt; ==&amp;gt; &amp;lt;input /&amp;gt;
+        removeEmptyAttributes: true,//删除所有空格作属性值 &amp;lt;input id=&quot;&quot; /&amp;gt; ==&amp;gt; &amp;lt;input /&amp;gt;
+        removeScriptTypeAttributes: true,//删除&amp;lt;script&amp;gt;的type=&quot;text/javascript&quot;
+        removeStyleLinkTypeAttributes: true,//删除&amp;lt;style&amp;gt;和&amp;lt;link&amp;gt;的type=&quot;text/css&quot;
+        minifyJS: true,//压缩页面JS
+        minifyCSS: true//压缩页面CSS
+    };
+    gulp.src('src/*.html')
+        .pipe(htmlmin(options))
+        .pipe(gulp.dest('dist/'));
+});
+//执行压缩前，先删除文件夹里的内容  
+//执行删除的时候不要把目录定在dist的子目录中，windows删除目录的同时会报错  
+gulp.task('clean', function(cb) {  
+    del(['dist/css', 'dist/js'], cb)  
+}); 
+//在任务数组中放上面要执行的任务  
+gulp.task('default', ['clean', 'minify', 'minifycss']);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;二关于对淘宝返利页面重构的反思&quot;&gt;二、关于对“淘宝返利”页面重构的反思&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;ie7下若将元素设置为浮动，元素不能自动撑开宽高，此时需要给浮动元素的父元素设置宽度，不然元素会乱掉；&lt;/li&gt;
+  &lt;li&gt;css代码中尽量不出现中文；如字体设置；&lt;/li&gt;
+  &lt;li&gt;尽量不要使用空格 直接使用margin；&lt;/li&gt;
+  &lt;li&gt;尽可能使用后代选择器，其他层次选择器可能不兼容低版本；&lt;/li&gt;
+  &lt;li&gt;display:none和visibility:hidden区别：
+visibility:hidden会保留元素空间。&lt;/li&gt;
+  &lt;li&gt;灵活使用定位和浮动相结合。&lt;/li&gt;
+&lt;/ol&gt;</content><author><name></name></author><summary type="html">一、gulp使用 1、执行预处理</summary></entry><entry><title type="html">“抓娃娃”前台项目总结</title><link href="http://localhost:4000/share/2017/10/24/p2.html" rel="alternate" type="text/html" title="“抓娃娃”前台项目总结" /><published>2017-10-24T21:41:45+08:00</published><updated>2017-10-24T21:41:45+08:00</updated><id>http://localhost:4000/share/2017/10/24/p2</id><content type="html" xml:base="http://localhost:4000/share/2017/10/24/p2.html">&lt;h5 id=&quot;1需求描述&quot;&gt;1、需求描述&lt;/h5&gt;
+&lt;p&gt;用户通过微信登陆商城，点击“娃娃机”进入抓娃娃界面，开始抓娃娃。用户每天有三次抓的机会，分享增加一次机会，每次能抓到娃娃机中某个娃娃的碎片，集齐碎片即可以进行兑换。&lt;/p&gt;
+&lt;h5 id=&quot;2项目结构&quot;&gt;2、项目结构&lt;/h5&gt;
+&lt;p&gt;采用vue构建项目，并使用webpack进行模块化和压缩更新。
+&lt;img src=&quot;E:/我的文档/我的笔记/1.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;3主要职责&quot;&gt;3、主要职责&lt;/h5&gt;
+&lt;p&gt;负责游戏页的开发&lt;/p&gt;
+
+&lt;h5 id=&quot;4抓娃娃游戏的实现思路&quot;&gt;4、抓娃娃游戏的实现思路&lt;/h5&gt;
+&lt;ol&gt;
+  &lt;li&gt;利用JavaScript绘制canvas&lt;/li&gt;
+  &lt;li&gt;将商品的基本信息和每个商品的坐标存在一个数组中，通过循环和计时器setInterval将商品存入一个实时展示娃娃轮播的数组中，实现底部轮播；&lt;/li&gt;
+  &lt;li&gt;绘制抓娃娃的钩子，并给按钮绑定点击事件。&lt;/li&gt;
+  &lt;li&gt;当按钮按下，开始抓娃娃，当爪子到达下面，判断数组中娃娃的坐标是否在爪子指定的范围内，如果在，抓到相应娃娃的碎片，将dollid传给服务器；否则，没有抓到。剩余次数减1。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h5 id=&quot;5项目开发中用到的东西&quot;&gt;5、项目开发中用到的东西&lt;/h5&gt;
+&lt;h6 id=&quot;51不同屏幕页面的适应问题&quot;&gt;5.1不同屏幕页面的适应问题&lt;/h6&gt;
+&lt;ol&gt;
+  &lt;li&gt;利用viewport属性
+```&lt;/li&gt;
+&lt;/ol&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no&quot; /&gt;
+
+&lt;p&gt;// width    设置viewport宽度，为一个正整数，或字符串‘device-width’&lt;br /&gt;
+// height   设置viewport高度，一般设置了宽度，会自动解析出高度，可以不用设置&lt;br /&gt;
+// initial-scale    默认缩放比例，为一个数字，可以带小数&lt;br /&gt;
+// minimum-scale    允许用户最小缩放比例，为一个数字，可以带小数&lt;br /&gt;
+// maximum-scale    允许用户最大缩放比例，为一个数字，可以带小数&lt;br /&gt;
+// user-scalable    是否允许手动缩放&amp;lt;/span&amp;gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;根据最小宽度来做页面。单位使用px和百分比。在宽度不同的设备上，页面的字体大小，内容尺寸都是一样的，不同的是，大屏的内容间的空隙比小屏的大。所以这样做的缺点就是，**页面在某些尺寸的设备上显示的效果不好**。
+2. rem【相对于根元素（即html元素）的字体大小的单位。】
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;/* 媒体查询 */
+@media screen and (max-width:320px) {&lt;br /&gt;
+  html {&lt;br /&gt;
+    font-size: 20px;&lt;br /&gt;
+  }&lt;br /&gt;
+}&lt;/p&gt;
+
+&lt;p&gt;@media screen and (min-width: 321px) and (max-width: 360px) {&lt;br /&gt;
+  html {&lt;br /&gt;
+    font-size: 22.5px;&lt;br /&gt;
+  }&lt;br /&gt;
+}&lt;/p&gt;
+
+&lt;p&gt;@media screen and (min-width: 361px) and (max-width: 375px){&lt;br /&gt;
+  html {&lt;br /&gt;
+    font-size: 23.44px;&lt;br /&gt;
+  }&lt;br /&gt;
+}&lt;/p&gt;
+
+&lt;p&gt;@media screen and (min-width: 376px) {&lt;br /&gt;
+  html {&lt;br /&gt;
+    font-size: 25.88px;&lt;br /&gt;
+  }&lt;br /&gt;
+}&lt;/p&gt;
+
+&lt;p&gt;/* 列表为空公共样式 */
+.empty-lists {
+  line-height: 30px;
+  font-size: 16px;
+  color: #666;
+  text-align: center;
+  margin-top: 6rem;
+}&lt;/p&gt;
+
+&lt;p&gt;.empty-img {
+  display: block;
+  height: 2rem;
+  width: 2rem;
+  margin: auto;
+}&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;通过媒体查询，然后根据不同的设备宽度在根元素上设置不同的字体大小。然后对原本使用px的地方使用rem来替换。这样，字体大小，内容尺寸，对随着屏幕宽度的改变而改变。
+3. 通过js动态计算屏幕宽高，然后按比例设置元素宽度，再等比例设置高度，动态地改变元素大小。
+- vue中通过computed计算元素尺寸，再绑定元素的style属性，实现改变。
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;template&gt;
+  &lt;div game-component=&quot;&quot;&gt;
+    &lt;div class=&quot;container&quot;&gt;
+      &lt;div class=&quot;head-bg&quot; :style=&quot;{width: size.prospectW + 'px', height:size.headH + 'px',marginTop:size.headMarginTop+'px'}&quot;&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;prospect&quot; id=&quot;prospect&quot; :style=&quot;{width: size.prospectW + 'px', height:size.prospectH + 'px'}&quot;&gt;
+        &lt;img src=&quot;../../assets/img/curtain.png&quot; /&gt;
+        &amp;lt;banner-component @tap='this.handleTap' ref='banner'/&amp;gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&amp;lt;/template&amp;gt;
+&lt;script&gt;
+computed {
+  size(){
+    let clientW = document.body.offsetWidth;
+    let prospectW = Math.ceil(clientW*0.7);//基准宽度
+    let prospectH = Math.ceil(prospectW*1.2);
+    let operationW = Math.ceil(clientW*0.85);
+    let operationH = Math.ceil(operationW*0.34);
+    return {
+      prospectW,
+      prospectH,
+      operationW,
+      operationH
+    }
+  }
+}
+&lt;script&gt;
+```
+###### 5.2通过控制class的active属性实现弹窗
+
+```
+&lt;template&gt;
+  &lt;button @click=&quot;openDialog()&quot;&gt;&lt;/button&gt;
+  &lt;!-- alert弹窗 --&gt;
+  &lt;div class=&quot;isShow&quot; :class=&quot;{dialog: isActive}&quot;&gt;
+    &lt;div class=&quot;alert&quot;&gt;
+      &lt;div class=&quot;info&quot;&gt;&lt;p&gt;&lt;/p&gt;&lt;p class=&quot;tips&quot;&gt;每日签到+1，每日分享+1&lt;/p&gt;&lt;/div&gt;
+      &lt;div class=&quot;confirm&quot; @click=&quot;closeDialog()&quot;&gt;确定&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/tempalte&gt;
+&lt;script&gt;
+ data() {
+   return{
+    alertInfo:'我是弹框',
+    isActive：false
+   }
+ }
+ method:{
+    openDialog:function(){
+        this.Active=true;
+    }
+    closeDialog:function(){
+        this.Active=false;
+    }
+ }
+&lt;/script&gt;
+&lt;style&gt;
+.isShow {
+    display:none;
+}
+.dialog {
+    display:block;
+}
+&lt;/style&gt;
+```
+5.3 vue实现tab切换
+```
+&lt;template&gt;
+  &lt;div class=&quot;tabs&quot;&gt;
+      &lt;ul&gt;
+          &amp;lt;li class=&quot;li-tab&quot; v-for=&quot;(item,index) in tabsParam&quot; 
+          @click=&quot;toggleTabs(index)&quot;
+          :class=&quot;{active:index!=nowIndex}&quot;  v-bind:key=&quot;item&quot;&amp;gt;&amp;lt;/li&amp;gt;
+      &lt;/ul&gt;
+      &lt;div class=&quot;divTab clearFloat&quot; v-show=&quot;nowIndex===0&quot;&gt;
+        我是tab1
+      &lt;/div&gt;
+      &lt;div class=&quot;divTab&quot; v-show=&quot;nowIndex===1&quot;&gt;
+        我是tab2
+      &lt;/div&gt;
+  &lt;/div&gt;
+&amp;lt;/tempalte&amp;gt;
+&lt;script&gt;
+ data() {
+   return{
+    tabsParam: [&quot;活动中&quot;, &quot;已兑换&quot;], //（这个也可以用对象key，value来实现）
+    nowIndex: 0, //默认第一个tab为激活状态
+   }
+ }
+ method:{
+    // 切换tab
+    toggleTabs: function(index) {
+      this.nowIndex = index;
+    },
+ }
+&lt;/script&gt;
+&lt;style&gt;
+.isShow {
+    display:none;
+}
+.dialog {
+    display:block;
+}
+&lt;/style&gt;
+```
+###### 5.4定义服务接口类
+
+```
+// 文件路径 /service/xx.service.js
+/*
+需要使用的模块依赖
+*/
+import httpService from './http.service'
+import commonService from './common.service'
+import store from '../stores/store' //store用于存放全局的变量，可以全局调用
+class BoxService {//定义服务的类名
+    /**
+     * 获取滚动娃娃列表BoxshowDolls 调用接口
+     */
+    BoxDolls() {
+            let token = commonService.getCookie('token')
+            return new Promise((resolve, reject) =&amp;gt; {//实现异步调用
+                let params = {
+                    //调用接口需要传的参数
+                    api:'接口名称',
+                }
+
+                httpService.post({
+                    url: //请求地址,
+                    data: params
+                }).then(result =&amp;gt; {
+                    //请求成功后的回掉函数
+                    resolve(result)
+                }).catch(error =&amp;gt; {
+                    //请求失败的回掉函数
+                    reject(error)
+                })
+            })
+        }
+    }
+}
+//实例化一个BoxService，并导出
+let boxService = new BoxService()
+export default boxService
+```
+
+
+&lt;/template&gt;&lt;/div&gt;&lt;/template&gt;</content><author><name></name></author><summary type="html">1、需求描述 用户通过微信登陆商城，点击“娃娃机”进入抓娃娃界面，开始抓娃娃。用户每天有三次抓的机会，分享增加一次机会，每次能抓到娃娃机中某个娃娃的碎片，集齐碎片即可以进行兑换。 2、项目结构 采用vue构建项目，并使用webpack进行模块化和压缩更新。</summary></entry><entry><title type="html">ie6、7兼容的笔记整理</title><link href="http://localhost:4000/share/2017/10/24/jianie6.html" rel="alternate" type="text/html" title="ie6、7兼容的笔记整理" /><published>2017-10-24T21:41:45+08:00</published><updated>2017-10-24T21:41:45+08:00</updated><id>http://localhost:4000/share/2017/10/24/jianie6</id><content type="html" xml:base="http://localhost:4000/share/2017/10/24/jianie6.html">&lt;h1 id=&quot;盒子模型&quot;&gt;盒子模型&lt;/h1&gt;
+&lt;h4 id=&quot;标准的盒模型&quot;&gt;标准的盒模型&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;http://images.cnblogs.com/cnblogs_com/cchyao/%E6%A0%87%E5%87%86W3C%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%E5%92%8CIE%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8BCSS%E5%B8%83%E5%B1%80%E7%BB%8F%E5%85%B8%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/1.JPG&quot; alt=&quot;image&quot; /&gt;&lt;br /&gt;
+标准 w3c 盒子模型的范围包括 margin、border、padding、content，并且 content 部分不包含其他部分&lt;/p&gt;
+&lt;h4 id=&quot;ie盒子模型&quot;&gt;ie盒子模型&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;http://images.cnblogs.com/cnblogs_com/cchyao/%E6%A0%87%E5%87%86W3C%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%E5%92%8CIE%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8BCSS%E5%B8%83%E5%B1%80%E7%BB%8F%E5%85%B8%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/2.JPG&quot; alt=&quot;image&quot; /&gt;&lt;br /&gt;
+ ie 盒子模型的范围也包括margin、border、padding、content。
+ 和标准 w3c 盒子模型不同的是：&lt;strong&gt;ie 盒子模型的 content 部分包含了 border 和 pading&lt;/strong&gt;。
+ 解决方案：要给元素添加具有指定宽度的内边距，而是尝试将内边距或外边距添加到元素的父元素和子元素。&lt;/p&gt;
+&lt;h1 id=&quot;浏览器兼容之浮动和定位&quot;&gt;浏览器兼容之浮动和定位&lt;/h1&gt;
+&lt;h4 id=&quot;ie6下内容会撑开设置好的宽高&quot;&gt;ie6下内容会撑开设置好的宽高&lt;/h4&gt;
+&lt;p&gt;例如：在固定宽度的warp_div下放left_div、right_div两个div并浮动，且warp_div正好放下这两个元素。
+在ie6中，如果子元素内部宽度大于元素本身宽度，就会撑开这个div,使得warp_div容不下，因此会发生折行。&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;解决办法：计算好容器宽高，不要溢出&lt;/p&gt;
+
+&lt;h4 id=&quot;子元素浮动&quot;&gt;子元素浮动&lt;/h4&gt;
+&lt;p&gt;在IE6下，父级下的两个子元素(块元素、未设置宽高)都浮动，
+如果两个子元素内部有块元素时，两个子元素不会内容撑开宽高，而会
+占满整行。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;解决办法:在IE6下父级下子元素浮动，如果子元素宽度需要内容撑开，就给子元素里面的块元素都加浮动&lt;/p&gt;
+
+&lt;h4 id=&quot;3像素bug&quot;&gt;3像素bug&lt;/h4&gt;
+&lt;p&gt;父级下两个div，左div设置左浮动width:100px，右div设置margin-left:100px
+标准浏览器下左div和右div会相连。IE6,7下两者之间会有3px的间距。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;解决办法:在IE6，7下元素要通过浮动并在同一行，就给这行元素都加浮动&lt;/p&gt;
+
+&lt;h4 id=&quot;绝对定位元素消失&quot;&gt;绝对定位元素消失&lt;/h4&gt;
+&lt;p&gt;当浮动元素和绝对定位元素是并列关系的时候，在IE6下绝对定位元素会消失&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;解决办法:给定位元素外面包个div&lt;/p&gt;
+
+&lt;h4 id=&quot;父级的overflow包不住相对定位子元素&quot;&gt;父级的overflow包不住相对定位子元素&lt;/h4&gt;
+
+&lt;p&gt;在IE6，7下，子元素有相对定位的话，父级的overflow包不住子元素&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;解决办法: 给父级也加相对定位&lt;/p&gt;
+
+&lt;h4 id=&quot;不支持fiexd&quot;&gt;不支持fiexd&lt;/h4&gt;
+&lt;p&gt;ie6、7;position:fixed失效
+&lt;br /&gt;解决办法:&lt;/p&gt;
+
+&lt;p&gt;_position:absolute;
+        _top:expression(eval(document.documentElement.scrollTop+100));&lt;/p&gt;
+
+&lt;p&gt;用JS代替这个效果&lt;/p&gt;
+&lt;h1 id=&quot;css选择器兼容&quot;&gt;css选择器兼容&lt;/h1&gt;
+&lt;h4 id=&quot;css1&quot;&gt;css1&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;http://images.cnitblog.com/blog/329084/201407/151725112871569.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+&lt;h4 id=&quot;css2&quot;&gt;css2&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;http://images.cnitblog.com/blog/329084/201407/151725123964896.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+&lt;h4 id=&quot;css3&quot;&gt;css3&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;http://images.cnitblog.com/blog/329084/201407/151725123964896.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;ie6下css常见兼容性问题&quot;&gt;ie6下css常见兼容性问题&lt;/h1&gt;
+&lt;h4 id=&quot;1ie6下浮动问题&quot;&gt;1、ie6下浮动问题。&lt;/h4&gt;
+&lt;p&gt;解决方案：给里面的块元素加浮动。&lt;/p&gt;
+&lt;h4 id=&quot;2ie6下最小高度问题在ie6下元素高度小于19px的时候会被当作19px处理&quot;&gt;2、IE6下最小高度问题：在IE6下元素高度小于19px的时候，会被当作19px处理。&lt;/h4&gt;
+&lt;p&gt;解决方案：给元素加 overflow:hidden。&lt;/p&gt;
+&lt;h4 id=&quot;3ie6下的双边距bug在ie6下块元素有浮动和横向的margin值横向的margin值会被放大成两倍&quot;&gt;3、IE6下的双边距bug：在IE6下，块元素有浮动和横向的margin值，横向的margin值会被放大成两倍。&lt;/h4&gt;
+&lt;p&gt;解决方案：display:inline。&lt;/p&gt;
+&lt;h4 id=&quot;4在ie67下li本身没浮动但是li的内容有浮动li下边就会产生一个间隙&quot;&gt;4、在IE6、7下li本身没浮动，但是li的内容有浮动，li下边就会产生一个间隙。&lt;/h4&gt;
+&lt;p&gt;解决方案：a.给li加浮动;b.给li加vertical-align:top ;&lt;br /&gt;&lt;/p&gt;
+&lt;h4 id=&quot;5margin传递子元素的margin会传给父元素&quot;&gt;5、margin传递：子元素的margin会传给父元素&lt;/h4&gt;
+&lt;p&gt;解决方案：a.父级或自己浮动;&lt;br /&gt;
+b.给元素加 overflow:hidden;zoom:1;&lt;/p&gt;
+&lt;h4 id=&quot;6在ie6下父级有边框的时候子元素的margin值消失&quot;&gt;6、在IE6下父级有边框的时候，子元素的margin值消失。&lt;/h4&gt;
+&lt;p&gt;解决方案：触发父级haslayout(haslayout触发：zoom:1)&lt;/p&gt;
+&lt;h4 id=&quot;7当ie6下最小高度问题和li的间隙问题共存时&quot;&gt;7、当IE6下最小高度问题和li的间隙问题共存时&lt;/h4&gt;
+&lt;p&gt;解决方案：给li加vertical-align:top 和浮动。&lt;/p&gt;
+&lt;h4 id=&quot;8ie6下当一行子元素占有的宽度子和和父级的宽度相差超过3px或有不满行状态的时候margin-bottom就会失效&quot;&gt;8、IE6下当一行子元素占有的宽度子和和父级的宽度相差超过3px,或有不满行状态的时候，margin-bottom就会失效。&lt;/h4&gt;
+&lt;p&gt;解决方案：无 （自己注意避免）。&lt;/p&gt;
+
+&lt;h4 id=&quot;9ie6下文字溢出bug&quot;&gt;9、IE6下文字溢出BUG：&lt;/h4&gt;
+&lt;p&gt;产生原因：子元素和父级宽度相差小于3px,或两个浮动元素之间有注释或内嵌元素。&lt;br /&gt;
+解决方案：用DIV把注释或内嵌元素包起来。&lt;/p&gt;
+
+&lt;h4 id=&quot;10当浮动元素和绝对定位元素是并列关系的时候在ie6下绝对定位元素会失效解决方案给定位元素外面包div&quot;&gt;10、当浮动元素和绝对定位元素是并列关系的时候，在IE6下绝对定位元素会失效。解决方案：给定位元素外面包DIV。&lt;/h4&gt;
+
+&lt;h4 id=&quot;11在ie67下子元素有相对定位的话父级的overflow包不住自己元素&quot;&gt;11、在IE6、7下，子元素有相对定位的话，父级的overflow包不住自己元素。&lt;/h4&gt;
+&lt;p&gt;解决方案：给父级加相对定位。&lt;/p&gt;
+
+&lt;h4 id=&quot;12在ie6下绝对定位元素的父级宽高是奇数的时候元素的right值和bottom值会有1px的偏差&quot;&gt;12、在IE6下绝对定位元素的父级宽高是奇数的时候，元素的right值和bottom值会有1px的偏差。&lt;/h4&gt;
+&lt;p&gt;解决方案：无（自己注意避免）。&lt;/p&gt;
+
+&lt;h4 id=&quot;13在ie67下输入类型的表单控件上下各有1px的间隙&quot;&gt;13、在IE6、7下输入类型的表单控件上下各有1px的间隙。&lt;/h4&gt;
+&lt;p&gt;解决方案：加浮动。&lt;/p&gt;
+
+&lt;h4 id=&quot;14在ie67下输入类型的表单控件加bordernone无效&quot;&gt;14、在IE6、7下输入类型的表单控件加border:none无效。&lt;/h4&gt;
+&lt;p&gt;解决方案：重置背景。&lt;/p&gt;
+
+&lt;h4 id=&quot;15在ie67下输入类型的表单控件输入文字的时候背景图片会跟着移动&quot;&gt;15、在IE6、7下输入类型的表单控件输入文字的时候，背景图片会跟着移动。&lt;/h4&gt;
+&lt;p&gt;解决方案：把背景加给父级。&lt;/p&gt;
+
+&lt;h4 id=&quot;16ie6下png不透明&quot;&gt;16、IE6下PNG不透明：&lt;/h4&gt;
+&lt;p&gt;解决方案：引入JS文件（DD_belatedPNG_0.0.8a.js）&lt;br /&gt;
+使用语法&lt;script&gt;DD_betatedPNG.fix('PNG图片所在块ID或CLSS名（如#div1，.class2）')&lt;/script&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;其他解决方案css-hack不建议使用&quot;&gt;其他解决方案:css hack(不建议使用)&lt;/h1&gt;
+&lt;h4 id=&quot;条件注释判断浏览器&quot;&gt;条件注释判断浏览器：&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;!--[if !IE]&amp;gt;&amp;lt;!--&amp;gt; 除IE外都可识别 &amp;lt;!--&amp;lt;![endif]--&amp;gt;
+&amp;lt;!--[if IE]&amp;gt; 所有的IE可识别 &amp;lt;![endif]--&amp;gt;
+&amp;lt;!--[if IE 6]&amp;gt; 仅IE6可识别 &amp;lt;![endif]--&amp;gt;
+&amp;lt;!--[if lt IE 6]&amp;gt; IE6以及IE6以下版本可识别 &amp;lt;![endif]--&amp;gt;
+&amp;lt;!--[if gte IE 6]&amp;gt; IE6以及IE6以上版本可识别 &amp;lt;![endif]--&amp;gt;
+&amp;lt;!--[if IE 7]&amp;gt; 仅IE7可识别 &amp;lt;![endif]--&amp;gt;
+&amp;lt;!--[if lt IE 7]&amp;gt; IE7以及IE7以下版本可识别 &amp;lt;![endif]--&amp;gt;
+&amp;lt;!--[if gte IE 7]&amp;gt; IE7以及IE7以上版本可识别 &amp;lt;![endif]--&amp;gt;
+&amp;lt;!--[if IE 8]&amp;gt; 仅IE8可识别 &amp;lt;![endif]--&amp;gt;
+&amp;lt;!--[if IE 9]&amp;gt; 仅IE9可识别 &amp;lt;![endif]--&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;类内属性前缀法&quot;&gt;类内属性前缀法&lt;/h4&gt;
+&lt;h4 id=&quot;选择器前缀&quot;&gt;选择器前缀&lt;/h4&gt;</content><author><name></name></author><summary type="html">盒子模型 标准的盒模型 标准 w3c 盒子模型的范围包括 margin、border、padding、content，并且 content 部分不包含其他部分 ie盒子模型 ie 盒子模型的范围也包括margin、border、padding、content。 和标准 w3c 盒子模型不同的是：ie 盒子模型的 content 部分包含了 border 和 pading。 解决方案：要给元素添加具有指定宽度的内边距，而是尝试将内边距或外边距添加到元素的父元素和子元素。 浏览器兼容之浮动和定位 ie6下内容会撑开设置好的宽高 例如：在固定宽度的warp_div下放left_div、right_div两个div并浮动，且warp_div正好放下这两个元素。 在ie6中，如果子元素内部宽度大于元素本身宽度，就会撑开这个div,使得warp_div容不下，因此会发生折行。</summary></entry><entry><title type="html">登陆功能的实现</title><link href="http://localhost:4000/share/2017/10/24/d4.html" rel="alternate" type="text/html" title="登陆功能的实现" /><published>2017-10-24T21:41:45+08:00</published><updated>2017-10-24T21:41:45+08:00</updated><id>http://localhost:4000/share/2017/10/24/d4</id><content type="html" xml:base="http://localhost:4000/share/2017/10/24/d4.html">&lt;h2 id=&quot;登陆功能的实现&quot;&gt;登陆功能的实现&lt;/h2&gt;
+&lt;h3 id=&quot;一需求说明&quot;&gt;一、需求说明&lt;/h3&gt;
+&lt;p&gt;使用提供的登录接口完成用户平台选择和登录认证&lt;/p&gt;
+&lt;h3 id=&quot;二html&quot;&gt;二、html&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;main-warp&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;login-box clearfloat&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;loginBox&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;h3&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;使用教育云平台账号登陆&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h3&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;input-box&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;name&quot;&lt;/span&gt;  &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;password&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;input-box&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;password&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;password&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;options clearfloat&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+			&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;options-left&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+				&lt;span class=&quot;nt&quot;&gt;&amp;lt;label&amp;gt;&lt;/span&gt;
+				&lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;checkbox&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;checked=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;checked&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;rememberPwd&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;rememberPwd&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;记住密码
+				&lt;span class=&quot;nt&quot;&gt;&amp;lt;/label&amp;gt;&lt;/span&gt;
+			&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+			&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&amp;gt;&lt;/span&gt;
+				&lt;span class=&quot;nt&quot;&gt;&amp;lt;label&amp;gt;&lt;/span&gt;
+				&lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;checkbox&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;autoLogin&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;autoLogin&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;自动登录
+				&lt;span class=&quot;nt&quot;&gt;&amp;lt;/label&amp;gt;&lt;/span&gt;
+			&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+			&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;options-right&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;自动登录&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;operation&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+			&lt;span class=&quot;nt&quot;&gt;&amp;lt;button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;login-btn&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;login&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;登陆&lt;span class=&quot;nt&quot;&gt;&amp;lt;/button&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;	
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;三具体实现&quot;&gt;三、具体实现&lt;/h3&gt;
+&lt;h5 id=&quot;1通过用户名获取平台数&quot;&gt;1、通过用户名获取平台数&lt;/h5&gt;
+&lt;p&gt;向平台发送请求，传递name参数，返回平台请求结果，此时，可将#loginBox部分隐藏，然后通过$(e).append(html)显示平台列表&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var html = stringBuilder(ff);
+$(&quot;.main-warp&quot;).append(html);
+$(&quot;#loginBox&quot;).css(&quot;display&quot;,&quot;none&quot;);
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h5 id=&quot;2点击按钮实现返回&quot;&gt;2、点击按钮实现返回&lt;/h5&gt;
+&lt;p&gt;将原页面显示，并且删除刚才的节点。&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$(&quot;.back-btn&quot;).click(function(){
+    $(&quot;#loginBox&quot;).css(&quot;display&quot;,&quot;block&quot;);
+    $(&quot;#platformBox&quot;).remove();
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h5 id=&quot;3绑定enter实现按钮登陆&quot;&gt;3、绑定enter实现按钮登陆&lt;/h5&gt;
+&lt;ol&gt;
+  &lt;li&gt;直接绑定
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//回车提交事件
+$(&quot;input&quot;).keydown(function() {
+  if (event.keyCode == &quot;13&quot;) {//keyCode=13是回车键
+ $(&quot;#login&quot;).click();
+  }
+}); 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;==这里选择input比body好，使用input选择器只有当鼠标聚焦在输入框上，enter才能触发；如果是body元素，就存在只要一按enter就会执行提交表单。==&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;通过bind向匹配元素附加一个或更多事件处理器(unbind取消绑定事件)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; //回车提交事件
+var enterLogin = function(event){
+    if (event.keyCode == &quot;13&quot;) {//keyCode=13是回车键
+        $(&quot;#login&quot;).click();
+     }
+}
+$(&quot;body&quot;).bind('keydown',enterLogin);
+$(&quot;body&quot;).unbind('keydown',enterLogin);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;若选中body，需要在出发后解绑该事件。&lt;/p&gt;
+&lt;h5 id=&quot;4记住密码&quot;&gt;4、记住密码&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//记住密码
+function rememberPwd() {
+    if($(&quot;#rememberPwd&quot;).attr(&quot;checked&quot;)){
+    	var c_name = $(&quot;#name&quot;).val();
+    	var c_password = $(&quot;#password&quot;).val();
+    	$.cookie(&quot;rmbUser&quot;, &quot;true&quot;, { expires: 7 }); //存储一个带7天期限的cookie 
+    	$.cookie(&quot;name&quot;,c_name,{expires:7});
+    	$.cookie(&quot;password&quot;,c_password,{expires:7});
+    }else{
+    	$.cookie(&quot;rmbUser&quot;, &quot;false&quot;, { expires: -1 }); 
+    	$.cookie(&quot;name&quot;,&quot;&quot;,{expires:-1});
+    	$.cookie(&quot;password&quot;,&quot;&quot;,{expires:-1});
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h5 id=&quot;5自动登录&quot;&gt;5、自动登录&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//自动登录
+function autoLogin() {
+	if($.cookie(&quot;rmbUser&quot;)==&quot;true&quot;){
+		if($(&quot;#autoLogin&quot;).attr(&quot;checked&quot;)){
+			$(&quot;#name&quot;).val($.cookie(&quot;name&quot;));
+			$(&quot;#password&quot;).val($.cookie(&quot;password&quot;));
+			$(&quot;#login&quot;).click();//判断后调用登陆函数
+		}
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;工作小结&quot;&gt;工作小结&lt;/h3&gt;
+&lt;h5 id=&quot;1-base64的编码与解码&quot;&gt;1. Base64的编码与解码&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- atob()//加密
+- btoa()//解密
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h5 id=&quot;2-js是一种弱类型语言变量没有类型限制可以随意赋值但是在定义全局变量时最好类型对应&quot;&gt;2. JS是一种弱类型语言,变量没有类型限制,可以随意赋值。但是在定义全局变量时最好类型对应。&lt;/h5&gt;
+&lt;h5 id=&quot;3-name-in-data-和-hasownproperty&quot;&gt;3. “‘name’ in data” 和 hasOwnProperty&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var data = {
+    &quot;name&quot;:&quot;xiaohua&quot;,
+    &quot;age&quot;:18
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;二者都可以判断是否拥有某个属性，但是hasOwnProperty()函数用于指示一个对象自身(不包括原型链)是否具有指定名称的属性。&lt;/p&gt;
+&lt;h5 id=&quot;4-html布局时考虑语义化标签的使用&quot;&gt;4. html布局时考虑语义化标签的使用。&lt;/h5&gt;
+
+&lt;p&gt;如：&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;div class=&quot;title&quot;&amp;gt;&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;用下面比较好。&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;h1&amp;gt;&amp;lt;/h1&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">登陆功能的实现 一、需求说明 使用提供的登录接口完成用户平台选择和登录认证 二、html &amp;lt;html&amp;gt; &amp;lt;div class=&quot;main-warp&quot;&amp;gt; &amp;lt;div class=&quot;login-box clearfloat&quot; id=&quot;loginBox&quot;&amp;gt; &amp;lt;h3 class=&quot;title&quot;&amp;gt;使用教育云平台账号登陆&amp;lt;/h3&amp;gt; &amp;lt;input type=&quot;text&quot; class=&quot;input-box&quot; name=&quot;name&quot; id=&quot;name&quot;&amp;gt; &amp;lt;input type=&quot;password&quot; class=&quot;input-box&quot; name=&quot;password&quot; id=&quot;password&quot;&amp;gt; &amp;lt;div class=&quot;options clearfloat&quot;&amp;gt; &amp;lt;div class=&quot;options-left&quot;&amp;gt; &amp;lt;label&amp;gt; &amp;lt;input type=&quot;checkbox&quot; checked=&quot;checked&quot; id=&quot;rememberPwd&quot; name=&quot;rememberPwd&quot;&amp;gt;记住密码 &amp;lt;/label&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;label&amp;gt; &amp;lt;input type=&quot;checkbox&quot; name=&quot;autoLogin&quot; id=&quot;autoLogin&quot;&amp;gt;自动登录 &amp;lt;/label&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&quot;options-right&quot;&amp;gt;&amp;lt;a href=&quot;#&quot;&amp;gt;自动登录&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&quot;operation&quot;&amp;gt; &amp;lt;button class=&quot;login-btn&quot; id=&quot;login&quot;&amp;gt;登陆&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/html&amp;gt; 三、具体实现 1、通过用户名获取平台数 向平台发送请求，传递name参数，返回平台请求结果，此时，可将#loginBox部分隐藏，然后通过$(e).append(html)显示平台列表</summary></entry><entry><title type="html">实习第7天</title><link href="http://localhost:4000/work/2017/10/21/d9.html" rel="alternate" type="text/html" title="实习第7天" /><published>2017-10-21T21:41:45+08:00</published><updated>2017-10-21T21:41:45+08:00</updated><id>http://localhost:4000/work/2017/10/21/d9</id><content type="html" xml:base="http://localhost:4000/work/2017/10/21/d9.html">&lt;ol&gt;
+  &lt;li&gt;激活win10系统&lt;/li&gt;
+  &lt;li&gt;下载sublime插件&lt;/li&gt;
+  &lt;li&gt;完成一张首页的制作&lt;/li&gt;
+&lt;/ol&gt;</content><author><name></name></author><summary type="html">激活win10系统 下载sublime插件 完成一张首页的制作</summary></entry><entry><title type="html">实习第五天</title><link href="http://localhost:4000/work/2017/10/19/d8.html" rel="alternate" type="text/html" title="实习第五天" /><published>2017-10-19T21:41:45+08:00</published><updated>2017-10-19T21:41:45+08:00</updated><id>http://localhost:4000/work/2017/10/19/d8</id><content type="html" xml:base="http://localhost:4000/work/2017/10/19/d8.html">&lt;h5 id=&quot;工作日志20171019&quot;&gt;工作日志2017.10.19&lt;/h5&gt;
+&lt;ol&gt;
+  &lt;li&gt;搭建前端开发环境。&lt;/li&gt;
+  &lt;li&gt;学会使用ps切图工具。&lt;/li&gt;
+  &lt;li&gt;制作商城大全三个页面的公共部分，包括头部、导航和底部。&lt;/li&gt;
+&lt;/ol&gt;</content><author><name></name></author><summary type="html">工作日志2017.10.19 搭建前端开发环境。 学会使用ps切图工具。 制作商城大全三个页面的公共部分，包括头部、导航和底部。</summary></entry></feed>

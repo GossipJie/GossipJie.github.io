@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "“娃娃乐”后台-基于typeScript"
+title:  "基于typeScript和iview开发项目"
 categories: share
 ---
 ##### 1、概述
 采用iView作为UI组件，typeScript写后台。
 包含的主要功能有：
-- 娃娃管理
-- 娃娃机管理
+- 载体管理
+- 容器管理
 - 商品管理
 - 用户管理
 ##### 2、具体实现
@@ -18,7 +18,7 @@ categories: share
 <html lang="en">
 
 <head>
-    <title>娃娃乐后台管理系统</title>
+    <title>后台管理系统</title>
 </head>
 
 <body>

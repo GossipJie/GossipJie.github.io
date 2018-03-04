@@ -120,17 +120,17 @@ export default class ChildComponent extends Vue {
 
 ```
 <i-form ref="box" rules={this.ruleInline} model={this.box}>
-	<form-item label="娃娃机名称" prop="name" >
+	<form-item label="物品机名称" prop="name" >
 		<i-input type="text" value={this.box.name} placeholder='填写名称' on-input={(val: string) => this.box.name = val} />
 	</form-item>
-	<form-item label="娃娃状态" prop="status">
-		<i-select value={this.box.status} placeholder='选择娃娃状态' on-input={(val: string) => { this.box.status = val }} >
+	<form-item label="物品状态" prop="status">
+		<i-select value={this.box.status} placeholder='选择物品状态' on-input={(val: string) => { this.box.status = val }} >
 			<i-option value='open'>直接上架</i-option>
 			<i-option value='close'>添加到仓库</i-option>
 		</i-select>
 	</form-item>
-	<form-item label="选择娃娃机" prop="dollIds">
-        <i-select value={this.box.dollIds} placeholder='选择娃娃机' on-input={(val: string[]) => this.handleSelect(val)} multiple>
+	<form-item label="选择物品机" prop="dollIds">
+        <i-select value={this.box.dollIds} placeholder='选择物品机' on-input={(val: string[]) => this.handleSelect(val)} multiple>
             {store.doll.dollList.map((item: any) => {
             return <i-option value={item.dollid}>{item.name}</i-option>
             })}

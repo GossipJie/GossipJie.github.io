@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "typeScript学习笔记"
-date:   2017-11-4 21:41:45 +0800
+date:   2017-11-8 21:41:45 +0800
 categories: share
 ---
 ### 1.基础类型
